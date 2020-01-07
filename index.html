@@ -47,8 +47,6 @@
             <code>rails new APP_NAME --database=postgresql</code>
           </div>
           <p>Create an application by running the rails new command in terminal. By default, rails will create an application using sqlite3 as the database, but you can specify the database when you create an application. Here is a list of some other common rails flags.</p>
-
-
         </div>
       </section>
       <section>
@@ -68,6 +66,23 @@
         </div>
       </section>
       <section>
+       <div class="row spaced">
+        <div class="col-xs-12 col-sm-6 offset-sm-3">
+          <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
+          <div class="code-block">
+            <code>rails db:rollback</code>
+            <code class="comments">#if you've just screwed up and need to alter the migration. Rollback until you reach the code you need to change.</code>
+            <code class="pt-2">rails g migration ChangeColumnName</code>
+            <code class="comments">#first create a new migration file in the terminal</code>
+            <code>rename_column :table_name, :old_column, :new_colum</code>
+            <code class="comments">#then rename the old column name with the new. don't forget to migrate next!</code>
+            <code>rails db:migrate</code>
+          </div>
+          <p>There are really two solutions for this. If you are working on a project on your own and you can rollback the migration, absolutely do it. Rollback to your heart's desire. If you are working with a team and they have already downloaded your code, things get a little funky. You need to create a new migration to rename the column, then run the  migration to update the schema.</p>
+        </div>
+      </div>
+    </section> 
+    <section>
        <div class="row spaced">
         <div class="col-xs-12 col-sm-6 offset-sm-3">
           <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
