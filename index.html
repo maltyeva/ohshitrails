@@ -37,55 +37,21 @@
     </div>
   </section>
   <main>
-
     <section>
       <div class="row spaced">
         <div class="col-xs-12 col-sm-6 offset-sm-3">
           <h2>Oh shit! I don't know where to start</h2>
-
           <div class="code-block">
             <code>rails new APP_NAME --database=postgresql</code>
           </div>
           <p>Create an application by running the rails new command in terminal. By default, rails will create an application using sqlite3 as the database, but you can specify the database when you create an application. Here is a list of some other common rails flags.</p>
         </div>
-      </section>
-      <section>
-        <div class="row spaced">
-          <div class="col-xs-12 col-sm-6 offset-sm-3">
-            <h2>Oh shit! I accidentally named my model/controller the wrong name</h2>
-            <div class="code-block">
-              <code>rails destroy CONTROLLER_NAME</code>
-              <code class="comments">#destroys the controller and any associated test files</code>
-              <code class="pt-2">rails destroy MODEL_NAME</code>
-              <code class="comments">#destroys the model and the associated migration</code>
-              <code>rails db:drop rails db:create rails db:migrate</code>
-              <code class="comments">#if you have already migrated the model, don't forget to reset the database. </code>
-            </div>
-            <p>Destroy the model and the controller in the terminal using this command. If you've written code in the controller or the model and need to rename them, more info <a href="https://stackoverflow.com/questions/11924124/how-to-rename-rails-controller-and-model-in-a-project" target="_blank">here.</a> </p>
-          </div>
-        </div>
-      </section>
-      <section>
-       <div class="row spaced">
-        <div class="col-xs-12 col-sm-6 offset-sm-3">
-          <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
-          <div class="code-block">
-            <code>rails db:rollback</code>
-            <code class="comments">#if you've just screwed up and need to alter the migration. Rollback until you reach the code you need to change.</code>
-            <code class="pt-2">rails g migration ChangeColumnName</code>
-            <code class="comments">#first create a new migration file in the terminal</code>
-            <code>rename_column :table_name, :old_column, :new_colum</code>
-            <code class="comments">#then rename the old column name with the new. don't forget to migrate next!</code>
-            <code>rails db:migrate</code>
-          </div>
-          <p>There are really two solutions for this. If you are working on a project on your own and you can rollback the migration, absolutely do it. Rollback to your heart's desire. If you are working with a team and they have already downloaded your code, things get a little funky. You need to create a new migration to rename the column, then run the  migration to update the schema.</p>
-        </div>
       </div>
-    </section> 
+    </section>
     <section>
-       <div class="row spaced">
+      <div class="row spaced">
         <div class="col-xs-12 col-sm-6 offset-sm-3">
-          <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
+          <h2>Oh shit! I accidentally named my model/controller the wrong name</h2>
           <div class="code-block">
             <code>rails destroy CONTROLLER_NAME</code>
             <code class="comments">#destroys the controller and any associated test files</code>
@@ -94,23 +60,91 @@
             <code>rails db:drop rails db:create rails db:migrate</code>
             <code class="comments">#if you have already migrated the model, don't forget to reset the database. </code>
           </div>
-          <p>There are really two solutions for this. If you are working on a project on your own and you can rollback the migration, absolutely do it. </p>
+          <p>Destroy the model and the controller in the terminal using this command. If you've written code in the controller or the model and need to rename them, more info <a href="https://stackoverflow.com/questions/11924124/how-to-rename-rails-controller-and-model-in-a-project" target="_blank">here.</a> </p>
         </div>
       </div>
-    </section> 
+    </section>
+    <section>
+     <div class="row spaced">
+      <div class="col-xs-12 col-sm-6 offset-sm-3">
+        <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
+        <div class="code-block">
+          <code>rails db:rollback</code>
+          <code class="comments">#if you've just screwed up and need to alter the migration. Rollback until you reach the code you need to change.</code>
+          <code class="pt-2">rails g migration ChangeColumnName</code>
+          <code class="comments">#first create a new migration file in the terminal</code>
+          <code>rename_column :table_name, :old_column, :new_colum</code>
+          <code class="comments">#then rename the old column name with the new. don't forget to migrate next!</code>
+          <code>rails db:migrate</code>
+        </div>
+        <p>There are really two solutions for this. If you are working on a project on your own and you can rollback the migration, absolutely do it. Rollback to your heart's desire. If you are working with a team and they have already downloaded your code, things get a little funky. You need to create a new migration to rename the column, then run the  migration to update the schema.</p>
+      </div>
+    </div>
+  </section> 
+  <section>
+   <div class="row spaced">
+    <div class="col-xs-12 col-sm-6 offset-sm-3">
+      <h2>Oh shit! I am getting an Uninitialized Constant error</h2>
+      <div class="code-block">
+        <code>rails restart</code>
+      </div>
+      <p>If your web browser is running into this error: <code class="d-inline px-2">NameError: uninitialized constant ClassName</code>, this means that Rails doesn't understand the gem, model name, or method you are trying to implement. Restarting the server will solve this 95% of the time. </p>
+    </div>
   </div>
+</section> 
+<section>
+ <div class="row spaced">
+  <div class="col-xs-12 col-sm-6 offset-sm-3">
+    <h2>Oh shit! I am getting an Pending Migration error</h2>
+    <div class="code-block">
+      <code>rails db:migrate</code>
+    </div>
+    <p>If your web browser is running into this error: <code class="d-inline px-2">ActiveRecord::PendingMigrationError Migrations are pending</code>, don't panic, you just need to run your migrations. </p>
+  </div>
+</div>
+</section> 
+<section>
+ <div class="row spaced">
+  <div class="col-xs-12 col-sm-6 offset-sm-3">
+    <h2>Oh shit! I am missing a template and I have no idea what to do</h2>
+    <div class="code-block">
+      <code>touch app/view/controllername/actionname.html.erb</code>
+    </div>
+    <p>A missing template error looks catastrophic, but it's super simple to fix. If you see this error: <code class="d-inline px-2">CommentsController#action is missing a template for request formats: text/html</code>, check your spelling. Make sure that the controller name is plural, make sure that the action name matches the html file, or create the file if it doesn't exist. </p>
+  </div>
+</div>
+</section> 
+<section>
+ <div class="row spaced">
+  <div class="col-xs-12 col-sm-6 offset-sm-3">
+    <h2>Oh shit! My database is not connecting. PG is broken and I've lost the will to live.</h2>
+    <div class="code-block">
+      <code>rm /usr/local/var/postgres/postmaster.pid</code>
+    </div>
+    <p>You've restarted your computer. You left it to get lunch, and now you are faced with this message: <code class="d-inline px-2">PG::ConnectionBad - could not connect to server: No such file or directory Is the server running locally and accepting connections on Unix domain socket "/tmp/.s.PGSQL.5432"?</code>. It's likely that the PostgreSQL connection is stuck. Removing the process id will restart it when you call your next migration. </p>
+  </div>
+</div>
+</section> 
+<section>
+ <div class="row spaced">
+  <div class="col-xs-12 col-sm-6 offset-sm-3">
+    <h2>Oh shit! There is a fatal error and my database does not exist. </h2>
+    <div class="code-block">
+      <code>rails db:create</code>
+    </div>
+    <p><code class="d-inline px-2">PG::Error FATAL "appname_development" does not exist</code> </p>By default, when you've created your application with PostgreSQL, it will not create the corresponding database. You need to run the create command to launch the db. This is often the case when you are working on a collaborative project and do not share development databases.
+  </div>
+</div>
+</section> 
 </main>
 
-  <!--    * wrong names 
-        * mistakes in terminal 
-        * migration 
-        * generator  -->
-        <footer class="spaced text-center">
-          <small>
-            Thank you again to <a href="https://twitter.com/ksylor" target="_blank">@kskylor</a> for the inspo. Check out here site if you are ever lost with git. 
-          </small> 
-          <small class="d-block">©2020 Maria Altyeva Schuessler <a href="http://mariacodes.io/" target="_blank">@mariacodes</a></small>
-        </footer>
+<footer class="spaced text-center">
+  <small>
+    Thank you again to <a href="https://twitter.com/ksylor" target="_blank">@kskylor</a> for the inspo. Check out here site if you are ever lost with git. 
+  </small> 
+  <small class="d-block">©2020 Maria Altyeva Schuessler <a href="http://mariacodes.io/" target="_blank">@mariacodes</a></small>
+  <small class="d-block mt-2">Have any more 'Oh Shit, Rails' moments? <a href="mailto:hello@mariacodes.io">Contact   me</a> and I'll add them to the site. </small>
+</footer>
 
-      </body>
-      </html>
+</body>
+</html>
