@@ -1,14 +1,23 @@
 $dark-grey: hsl(0, 0%, 88%);
 $light-grey: hsl(0, 0%, 93%);
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Nanum+Gothic+Coding');
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', 'Helvetica', sans-serif;
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
 p, body {
 	font-family: "Lato", "Helvetica", sans-serif;
+}
+
+code {
+  font-family: 'Nanum Gothic Coding', monospace;
+  display: block; 
 }
 
 .spaced {
@@ -24,4 +33,12 @@ p, body {
   overflow: auto;
   padding: 1em;
   background: $dark-grey;
+
+  code {
+    color: #555555;
+  }
+}
+
+code.comments {
+  color: #888888;
 }

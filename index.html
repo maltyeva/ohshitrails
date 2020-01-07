@@ -8,47 +8,77 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <title>Oh, shit, rails!</title>
 </head>
 <body>
-  <section id="intro spaced">
-    <div class="row">
+  <section id="intro">
+    <div class="row spaced">
       <div class="col-xs-12 col-sm-6 offset-sm-3">
-        <h1 class="text-center">Oh shit, Rails!</h1>
-        <p>This site wouldn't be here without without  <a href="https://ohshitgit.com/" target="_blank">Oh Shit, Git!?</a>. All credit goes to the talented <a href="https://twitter.com/ksylor" target="_blank">@kskylor</a>.  </p>
+        <h1 class="text-center">Oh shit, Rails!?!</h1>
+        <p>Rails is deceptively hard. Sure, you can scaffold you way to a halfway decent application, but that's not real programming, right? Once you add all the components of Rails, the MVC, the ERB, the databases, the Active Record, things often start to go haywire. Then you get into a StackOverflow rabbit hole that makes you want to stop being a programmer altogether. </p>
+        <p>I made this site to help, because I've made every single one of these mistakes before, so you won't have to.</p>
+        <small>Btw, this site wouldn't be here without without  <a href="https://ohshitgit.com/" target="_blank">Oh Shit, Git!?</a>. All credit goes to the talented <a href="https://twitter.com/ksylor" target="_blank">@kskylor</a>.  </small>
       </div>
     </div>
   </section>
   <main>
 
+    <section>
+      <div class="row spaced">
+        <div class="col-xs-12 col-sm-6 offset-sm-3">
+          <h2>Oh shit! I don't know where to start</h2>
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 offset-sm-3">
-        <div class="code-block">
-          <p>TEST</p>
+          <div class="code-block">
+            <code>rails new APP_NAME --database=postgresql</code>
+          </div>
+          <p>Create an application by running the rails new command in terminal. By default, rails will create an application using sqlite3 as the database, but you can specify the database when you create an application. Here is a list of some other common rails flags.</p>
+
+
         </div>
-        * wrong names 
+      </section>
+      <section>
+        <div class="row spaced">
+          <div class="col-xs-12 col-sm-6 offset-sm-3">
+            <h2>Oh shit! I accidentally named my model/controller the wrong name</h2>
+            <div class="code-block">
+              <code>rails destroy CONTROLLER_NAME</code>
+              <code class="comments">#destroys the controller and any associated test files</code>
+              <code class="pt-2">rails destroy MODEL_NAME</code>
+              <code class="comments">#destroys the model and the associated migration</code>
+              <code>rails db:drop rails db:create rails db:migrate</code>
+              <code class="comments">#if you have already migrated the model, don't forget to reset the database. </code>
+
+
+            </div>
+            <p>Destroy the model and the controller in the terminal using this command. If you've written code in the controller or the model and need to rename them, more info <a href="https://stackoverflow.com/questions/11924124/how-to-rename-rails-controller-and-model-in-a-project" target="_blank">here.</a> </p>
+          </div>
+        </div>
+      </section>
+      <section>
+       <div class="row spaced">
+        <div class="col-xs-12 col-sm-6 offset-sm-3">
+          <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
+        </div>
+      </div>
+    </section> 
+  </div>
+</main>
+
+  <!--    * wrong names 
         * mistakes in terminal 
         * migration 
-        * generator 
-      </div>
-      <!-- <section>
-        <h2>Oh shit! I don't know where to start</h2>
-        <p>Create an application by running the rails new command in terminal. By default, rails will create an application using sqlite3 as the database, but you can specify the database when you create an application. Here is a list of some other common rails flags.</p>
-      </section>
-      ok, so what now? 
-      <section>
-        <h2>Oh shit! I accidentally named my model/controller the wrong name</h2>
-        <p>Destroy the model and the controller in the terminal using this command </p>
-      </section>
-      <section>
-        <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
-      </section> -->
-    </div>
-  </main>
-  <footer>
-    Thank you to oh shit git as both a design and idea inspiration. 
-  </footer>
+        * generator  -->
+        <footer class="spaced text-center">
+          <small>
+            Thank you again to <a href="https://twitter.com/ksylor" target="_blank">@kskylor</a> for the inspo. Check out here site if you are ever lost with git. 
+          </small> 
+          <small class="d-block">©2020 Maria Altyeva Schuessler <a href="http://mariacodes.io/" target="_blank">@mariacodes</a></small>
+        </footer>
 
-</body>
-</html>
+      </body>
+      </html>
