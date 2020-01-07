@@ -13,6 +13,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111037267-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111037267-3');
+  </script>
+
   <title>Oh, shit, rails!</title>
 </head>
 <body>
@@ -52,8 +62,6 @@
               <code class="comments">#destroys the model and the associated migration</code>
               <code>rails db:drop rails db:create rails db:migrate</code>
               <code class="comments">#if you have already migrated the model, don't forget to reset the database. </code>
-
-
             </div>
             <p>Destroy the model and the controller in the terminal using this command. If you've written code in the controller or the model and need to rename them, more info <a href="https://stackoverflow.com/questions/11924124/how-to-rename-rails-controller-and-model-in-a-project" target="_blank">here.</a> </p>
           </div>
@@ -63,6 +71,15 @@
        <div class="row spaced">
         <div class="col-xs-12 col-sm-6 offset-sm-3">
           <h2>Oh shit! I accidentally named my column the wrong name or gave it the wrong data type. </h2>
+          <div class="code-block">
+            <code>rails destroy CONTROLLER_NAME</code>
+            <code class="comments">#destroys the controller and any associated test files</code>
+            <code class="pt-2">rails destroy MODEL_NAME</code>
+            <code class="comments">#destroys the model and the associated migration</code>
+            <code>rails db:drop rails db:create rails db:migrate</code>
+            <code class="comments">#if you have already migrated the model, don't forget to reset the database. </code>
+          </div>
+          <p>There are really two solutions for this. If you are working on a project on your own and you can rollback the migration, absolutely do it. </p>
         </div>
       </div>
     </section> 
