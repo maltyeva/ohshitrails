@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
-
+@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat");
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', 'Helvetica', sans-serif;
-}
+  font-family: 'Montserrat', 'Helvetica', sans-serif; }
 
 p, body {
-	font-family: "Lato", "Helvetica", sans-serif;
-}
+  font-family: "Lato", "Helvetica", sans-serif; }
 
 .spaced {
-  margin: 2em 0;
-}
+  margin: 2em 0; }
+
+.code-block {
+  border-radius: .5em;
+  border: 0.3em solid #ededed;
+  box-shadow: 1px 1px 0.3em grey inset;
+  margin: .5em 0;
+  overflow: auto;
+  padding: 1em;
+  background: #e0e0e0; }
+
+/*# sourceMappingURL=main.css.map */
